@@ -1,0 +1,53 @@
+<div class="container">
+  <br><br>
+
+<p>{{firstName}}</p>
+<p>{{age}}</p>
+<p>{{isSmoker}}</p>
+
+<!-- String Interpolation {{ }} -->
+<p>{{user.lastName}}</p>
+
+<!-- <p>{{ people[0].age }}</p> -->
+
+<!-- Property Binding [] -->
+<img [src]="imgUrl" alt="">
+<img src="{{imgUrl}}" alt="">
+
+<img [width]="imgWidth" src="../assets/blue-bird.jpg" alt="">
+
+<br><br>
+<button [disabled]="isEnabled">Submit</button>
+<br><br>
+<button [hidden]="isHidden">Submit</button>
+
+<br><br>
+
+<!-- Event Binding -->
+<button type="button" class="btn btn-primary" (click)="changeName()">Change Name</button>
+<p>{{ userName1 }}</p>
+
+<br><br>
+
+<button type="button" class="btn btn-primary" (click)="printFullName()">Print FullName</button>
+<br><br>
+
+<input type="text" #input (input)="onInputChange(input.value)">
+
+<p style="color: #333; background-color: beige;">{{ inputMessage }}</p>
+
+
+<div *ngIf="isLoggedIn">Hello User!</div>
+<div *ngIf="!isLoggedIn">Please, log in!</div>
+
+<ul>
+  <li *ngFor="let person of people; let i = index">
+    {{i + 1}} - {{person.name}}
+  </li>
+</ul>
+
+</div>
+
+
+<app-navbar></app-navbar>
+<app-footer></app-footer>
